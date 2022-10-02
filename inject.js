@@ -327,7 +327,7 @@ window.onload = function() {
 
 
     
-    console.log("canvas-nest.js loaded");
+    console.log("canvas-nest.js(2) loaded");
     // setTimeout(function() {
     //     redraw();
     // }, 100);
