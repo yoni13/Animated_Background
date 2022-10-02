@@ -1,4 +1,13 @@
 window.onload = function() {
+let color = undefined
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    // dark mode
+    color = '255,255,255'
+}
+else {
+color = '0,0,0'
+}
+
 ! function() {
     function get_attribute(node, attr, default_value) {
         return node.getAttribute(attr) || default_value;
@@ -15,7 +24,7 @@ window.onload = function() {
             l: script_len, // for canvas id
             z: get_attribute(script, "zIndex", -1),
             o: get_attribute(script, "opacity", 0.5),
-            c: get_attribute(script, "color", "0,0,0"),
+            c: get_attribute(script, "color", color),
             n: get_attribute(script, "count", 99)
         };
     }
@@ -156,6 +165,7 @@ window.onload = function() {
     }
 
     frame_func(redraw);
+    console.log("canvas-nest.js loaded");
     // setTimeout(function() {
     //     redraw();
     // }, 100);
